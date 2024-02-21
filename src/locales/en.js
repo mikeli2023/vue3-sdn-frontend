@@ -1,8 +1,8 @@
 export default {
   "menu": {
-    "Products": "Products",
-    "Colocation": "Colocation",
-    "Bare-Metal": "Bare Metal",
+    "Tools": "Tools",
+    "SDN": "SDN",
+    "VPN": "VPN",
     "Blockchain-Hosting": "Blockchain Hosting",
     "GPU-Clusters": "GPU Clusters",
     "About-Us": "About Us",
@@ -52,7 +52,7 @@ export default {
   },
   "product": {
     "colocation": {
-      "title": "COLOCATION",
+      "title": "Nebulablock VPN",
       "describe": "A Modern, Reliable Telecommunications Network With A Strategic Location And Competitive Pricing",
       "shop": {
         "title": "One Stop Shop Services",
@@ -199,7 +199,7 @@ export default {
       "Hour-Plan": "Hour Plan"
     },
     "ebi": {
-      "title": "Blockchain Hosting",
+      "title": "Nebulablock SDN",
       "describe": "One stop shop Blockchain Infrastructure provider <br />A Comprehensive Blockchain Infrastructure Hub Empowering the Web3 Ecosystem",
       "blockchain": {
         "title": "Trusted by technical teams at blockchain projects of all sizes",

@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="starting">
+    <!-- <div class="starting">
       <div class="starting-cont">
         <el-row class="row-bg" :gutter="48" justify="space-between">
           <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" v-for="value in valueData" :key="value">
@@ -29,7 +29,7 @@
           </el-col>
         </el-row>
       </div>
-    </div>
+    </div> -->
 
     <div class="map">
       <div class="lang-max">
@@ -257,24 +257,18 @@ export default defineComponent({
     async function productRoute (id) {
       switch (String(id)) {
         case '6':
-          router.push({ name: 'bareMetal' })
+          router.push({ name: 'SDN' })
           break;
         case '7':
-          router.push({ name: 'gpuClusters' })
-          break;
-        case '8':
-          router.push({ name: 'colocation' })
-          break;
-        case '9':
-          router.push({ name: 'blockchainHosting' })
+          router.push({ name: 'VPN' })
           break;
       }
     }
     async function init () {
       const language_id = language.value === 'zh-cn' ? 26 : 36
-      const categoryRes = await system.$commonFun.sendRequest(`${process.env.VUE_APP_BASEAPI}api/v1/category/${language_id}`, 'get')
-      if (categoryRes && categoryRes.status === "success") valueData.value = categoryRes.data || []
-      else valueData.value = []
+      // const categoryRes = await system.$commonFun.sendRequest(`${process.env.VUE_APP_BASEAPI}api/v1/category/${language_id}`, 'get')
+      // if (categoryRes && categoryRes.status === "success") valueData.value = categoryRes.data || []
+      // else valueData.value = []
     }
     onMounted(() => init())
     return {

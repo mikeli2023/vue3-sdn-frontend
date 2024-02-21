@@ -32,50 +32,13 @@
           </div>
         </div>
       </el-tab-pane>
-      <el-tab-pane name="myVM">
+      <el-tab-pane name="mySDN">
         <template #label>
-          <span class="font-23">My VM</span>
+          <span class="font-23">My SDN</span>
         </template>
         <div class="profile">
           <div class="flex-row flex-end font-18 padding-16 font-gilroy-bold">
-            <router-link :to="{ name: 'creatVM' }" class="learn-more">Create VM</router-link>
-          </div>
-          <div class="profile-table font-18">
-            <loading-over v-if="creatLoad" :listLoad="creatLoad"></loading-over>
-            <el-table :data="vmData" stripe style="width: 100%">
-              <el-table-column prop="os" label="OS" min-width="80">
-                <template #default="scope">
-                  <span :title="scope.row.os">{{scope.row.os}}</span>
-                </template>
-              </el-table-column>
-              <el-table-column prop="datacenter" label="Region" min-width="80" />
-              <el-table-column prop="vm_name" label="Name" min-width="120">
-                <template #default="scope">
-                  <span :title="scope.row.vm_name">{{scope.row.vm_name}}</span>
-                </template>
-              </el-table-column>
-              <el-table-column prop="cpu_cores" label="vCPU" min-width="70" />
-              <el-table-column prop="ram" label="Memory(GB)" min-width="110" />
-              <el-table-column prop="disk_size" label="Storage(GB)" min-width="110" />
-              <el-table-column prop="public_ipv4" label="Public IPV4" min-width="110">
-                <template #default="scope">
-                  <span :title="scope.row.public_ipv4">{{scope.row.public_ipv4}}</span>
-                </template>
-              </el-table-column>
-              <el-table-column prop="" min-width="120">
-                <template #default="scope">
-                  <div class="flex-row center">
-                    <el-popconfirm title="Do you want to delete this vm, please confirm" confirm-button-text="Yes" cancel-button-text="Cancel" @confirm="deleteVM(scope.row)">
-                      <template #reference>
-                        <span class="font-16 m">Delete</span>
-                      </template>
-                    </el-popconfirm>
-
-                    <span class="font-16 m" @click="modifyVM(scope.row)">Modify VM</span>
-                  </div>
-                </template>
-              </el-table-column>
-            </el-table>
+            <router-link :to="{ name: 'SDN' }" class="learn-more">Nebulablock SDN</router-link>
           </div>
         </div>
       </el-tab-pane>
@@ -85,13 +48,11 @@
         </template>
       </el-tab-pane>
     </el-tabs>
-    <modify-vm v-if="modifyShow" :vmCont="vmCont" @handleModify="handleModify"></modify-vm>
   </section>
 </template>
 
 <script>
 import loadingOver from "@/components/loading"
-import modifyVm from "@/components/modifyVM"
 import { defineComponent, computed, onMounted, onActivated, watch, ref, reactive, getCurrentInstance } from 'vue'
 import { useStore } from "vuex"
 import { useRouter, useRoute } from 'vue-router'
@@ -134,20 +95,6 @@ export default defineComponent({
       ]
     })
 
-    async function deleteVM (row) {
-      creatLoad.value = true
-      const params = {
-        "vm_region": row.datacenter,
-        "public_ipv4": row.public_ipv4
-      }
-      const deleteRes = await system.$commonFun.sendRequest(`${process.env.VUE_APP_BASEAPI}api/v1/cloud/delete-vm`, 'post', params)
-      if (deleteRes && deleteRes.status === "success") system.$commonFun.messageTip('success', deleteRes.message)
-      listMethod()
-    }
-    async function modifyVM (row) {
-      vmCont.value = row
-      modifyShow.value = true
-    }
     async function getReset (formEl) {
       if (!formEl) return
       await ruleResetRef.value.validate(async (valid, fields) => {
@@ -174,16 +121,7 @@ export default defineComponent({
         }
       })
     }
-    async function listMethod () {
-      creatLoad.value = true
-      const listRes = await system.$commonFun.sendRequest(`${process.env.VUE_APP_BASEAPI}api/v1/cloud/get-vm-list`, 'get')
-      vmData.value = listRes && listRes.data ? listRes.data : []
-      creatLoad.value = false
-    }
-    function handleModify (dia, row) {
-      modifyShow.value = dia
-      if (row) listMethod()
-    }
+
     const handleClick = (tab, event) => {
       if (tab.props.name !== 'logout') return
       logLoad.value = true
@@ -204,14 +142,11 @@ export default defineComponent({
       bodyWidth,
       creatLoad,
       logLoad,
-      vmData,
       tabsValue,
       modifyShow,
-      vmCont,
       ruleForm,
       rulesReset,
-      ruleResetRef,
-      deleteVM, modifyVM, handleModify, getReset, handleClick
+      ruleResetRef,handleModify, getReset, handleClick
     }
   }
 })

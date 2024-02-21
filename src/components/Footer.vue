@@ -28,12 +28,9 @@
           <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
             <el-row>
               <el-col :xs="24" :sm="11" :md="11" :lg="11" :xl="11" class="font-22">
-                <a href="javascript:;" class="weight-7">{{$t('menu.Products')}}</a>
-                <router-link :to="{name: 'blockchainHosting'}" class="t weight-3">{{$t('menu.Blockchain-Hosting')}}</router-link>
-                <router-link :to="{name: 'gpuClusters'}" class="t weight-3">{{$t('menu.GPU-Clusters')}}</router-link>
-                <router-link :to="{name: 'bareMetal'}" class="t weight-3">{{$t('menu.Bare-Metal')}}</router-link>
-                <router-link :to="{name: 'cloud'}" class="t weight-3">{{$t('menu.Cloud')}}</router-link>
-                <router-link :to="{name: 'colocation'}" class="t weight-3">{{$t('menu.Colocation')}}</router-link>
+                <a href="javascript:;" class="weight-7">{{$t('menu.Tools')}}</a>
+                <router-link :to="{name: 'SDN'}" class="t weight-3">{{$t('menu.SDN')}}</router-link>
+                <router-link :to="{name: 'VPN'}" class="t weight-3">{{$t('menu.VPN')}}</router-link>
               </el-col>
               <el-col :xs="24" :sm="9" :md="9" :lg="9" :xl="9" class="font-22">
                 <a href="javascript:;" class="weight-7">{{$t('menu.Company')}}</a>

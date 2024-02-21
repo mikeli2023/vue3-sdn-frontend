@@ -10,20 +10,10 @@ const dashboard = () =>
     import ("@/views/index");
 const main = () =>
     import ("@/views/main/index");
-const colocation = () =>
-    import ("@/views/product/colocation");
-const bareMetal = () =>
-    import ("@/views/product/bareMetal");
-const blockchainHosting = () =>
-    import ("@/views/product/blockchainHosting");
-const gpuClusters = () =>
-    import ("@/views/product/gpuClusters");
+const sdn = () =>
+    import ("@/views/product/sdn");
 const myProfile = () =>
     import ("@/views/profile/index");
-const cloud = () =>
-    import ("@/views/product/cloud");
-const creatVM = () =>
-    import ("@/components/CreateVM");
 const aboutUs = () =>
     import ("@/views/about/index");
 const welcome = () =>
@@ -41,52 +31,20 @@ const routes = [{
                 title: 'Nebula Block'
             }
         }, {
-            path: '/colocation',
-            name: 'colocation',
-            component: colocation,
-            meta: {
-                keepAlive: true,
-                title: 'Colocation'
-            }
-        }, {
-            path: '/bare-metal',
-            name: 'bareMetal',
-            component: bareMetal,
-            meta: {
-                keepAlive: true,
-                title: 'BARE METAL'
-            }
-        }, {
-            path: '/blockchain-hosting',
-            name: 'blockchainHosting',
-            component: blockchainHosting,
+            path: '/sdn',
+            name: 'SDN',
+            component: sdn,
             meta: {
                 keepAlive: true,
                 title: 'Blockchain Hosting'
             }
         }, {
-            path: '/GPU-Clusters',
-            name: 'gpuClusters',
-            component: gpuClusters,
+            path: '/vpn',
+            name: 'VPN',
+            component: sdn,
             meta: {
                 keepAlive: true,
-                title: 'GPU Clusters'
-            }
-        }, {
-            path: '/public-cloud',
-            name: 'cloud',
-            component: cloud,
-            meta: {
-                keepAlive: true,
-                title: 'Public Cloud'
-            }
-        }, {
-            path: '/create-vm',
-            name: 'creatVM',
-            component: creatVM,
-            meta: {
-                keepAlive: true,
-                title: 'Create VM'
+                title: 'Blockchain Hosting'
             },
             beforeEnter: (to, from, next) => {
                 if (!sessionStorage.getItem('email_address_nebulaBlock')) {

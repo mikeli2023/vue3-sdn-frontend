@@ -6,22 +6,13 @@
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :teleported="true" @select="handleSelect">
           <el-sub-menu index="3">
             <template #title>
-              <span class="mit font-22">{{$t('menu.Products')}}</span>
+              <span class="mit font-22">{{$t('menu.Tools')}}</span>
             </template>
-            <el-menu-item index="3-3">
-              <span class="mit font-22">{{$t('menu.Blockchain-Hosting')}}</span>
-            </el-menu-item>
-            <el-menu-item index="3-4">
-              <span class="mit font-22">{{$t('menu.GPU-Clusters')}}</span>
-            </el-menu-item>
             <el-menu-item index="3-2">
-              <span class="mit font-22">{{$t('menu.Bare-Metal')}}</span>
-            </el-menu-item>
-            <el-menu-item index="3-5">
-              <span class="mit font-22">{{$t('menu.Cloud')}}</span>
+              <span class="mit font-22">{{$t('menu.SDN')}}</span>
             </el-menu-item>
             <el-menu-item index="3-1">
-              <span class="mit font-22">{{$t('menu.Colocation')}}</span>
+              <span class="mit font-22">{{$t('menu.VPN')}}</span>
             </el-menu-item>
           </el-sub-menu>
           <el-sub-menu index="company">
@@ -41,12 +32,12 @@
           <el-menu-item index="contact">
             <span class="mit font-22">{{$t('public.Contact-Us')}}</span>
           </el-menu-item>
-          <!-- <el-menu-item index="myProfile" v-if="emailAddress">
+          <el-menu-item index="myProfile" v-if="emailAddress">
             <span class="mit font-22">My Profile</span>
-          </el-menu-item> -->
+          </el-menu-item>
         </el-menu>
         <div class="right flex-row nowrap">
-          <!-- <div class="sign" v-if="emailAddress">
+          <div class="sign" v-if="emailAddress">
             <el-dropdown @command="handleSelect" class="sign-popper" popper-class="menu-popper" :teleported="true">
               <span class="el-dropdown-link login font-22">
                 {{emailAddress}}
@@ -62,10 +53,10 @@
                 </el-dropdown-menu>
               </template>
             </el-dropdown>
-          </div> -->
-          <!-- <div v-if="emailAddress === ''" class="login font-22" @click="dataShow=true">{{t('menu.login')}}</div> -->
+          </div>
+          <div v-if="emailAddress === ''" class="login font-22" @click="dataShow=true">{{t('menu.login')}}</div>
 
-          <!-- <el-dropdown popper-class="i18n-popper" @command="handleSelect">
+          <el-dropdown popper-class="i18n-popper" @command="handleSelect">
             <span class="el-dropdown-link flex-row nowrap">
               <i class="mit-icon"></i>
               <span class="mit font-22">{{language === 'zh-cn'? 'CN':'EN'}}</span>
@@ -89,7 +80,7 @@
                 </el-dropdown-item>
               </el-dropdown-menu>
             </template>
-          </el-dropdown> -->
+          </el-dropdown>
         </div>
       </div>
     </div>
@@ -140,11 +131,8 @@ export default defineComponent({
     }
     async function handleSelect (key, keyPath) {
       if (key === '1') router.push({ name: 'dashboard' })
-      else if (key === '3-1') router.push({ name: 'colocation' })
-      else if (key === '3-2') router.push({ name: 'bareMetal' })
-      else if (key === '3-3') router.push({ name: 'blockchainHosting' })
-      else if (key === '3-4') router.push({ name: 'gpuClusters' })
-      else if (key === '3-5') router.push({ name: 'cloud' })
+      else if (key === '3-1') router.push({ name: 'VPN' })
+      else if (key === '3-2') router.push({ name: 'SDN' })
       else if (key === 'about') router.push({ name: 'aboutUs' })
       else if (key === 'blog') system.$commonFun.goLink('https://nebulablock.medium.com/')
       else if (key === 'support') system.$commonFun.goLink('https://nebulablock.freshdesk.com/support/home')
@@ -165,11 +153,8 @@ export default defineComponent({
       if (state === 'LogIn' || state === 'Reset') dataShow.value = true
       const nameMenu = row || route.name
       if (nameMenu.indexOf('dashboard') > -1) activeIndex.value = '1'
-      else if (nameMenu.indexOf('colocation') > -1) activeIndex.value = '3-1'
-      else if (nameMenu.indexOf('bareMetal') > -1) activeIndex.value = '3-2'
-      else if (nameMenu.indexOf('blockchainHosting') > -1) activeIndex.value = '3-3'
-      else if (nameMenu.indexOf('gpuClusters') > -1) activeIndex.value = '3-4'
-      else if (nameMenu.indexOf('cloud') > -1) activeIndex.value = '3-5'
+      else if (nameMenu.indexOf('VPN') > -1) activeIndex.value = '3-1'
+      else if (nameMenu.indexOf('SDN') > -1) activeIndex.value = '3-2'
       else if (nameMenu.indexOf('blog') > -1) activeIndex.value = 'blog'
       else if (nameMenu.indexOf('about') > -1) activeIndex.value = 'about'
       else if (nameMenu.indexOf('myProfile') > -1) activeIndex.value = 'myProfile'
