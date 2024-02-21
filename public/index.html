@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head prefix="og: http://ogp.me/ns#">
+  <!-- <meta name="referrer" content="no-referrer" charset="utf-8"> -->
+  <meta name="referrer" content="no-referrer-when-downgrade" charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+  />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="email=no" name="format-detection" />
+  <meta name="author" content="Nebula Block">
+  <meta name="keywords" content="Nebula Block" />
+  <meta name="description" content="Nebula Block, a global leader in Web3 infrastructure, offers a range of comprehensive Web3 hosting solutions, including Blockchain enterprise infrastructure, high-performance GPUs, bare metal services, and decentralized hosting, aimed at enhancing the Web3 ecosystem."
+  />
+  <meta property="og:title" content="Nebula Block">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= BASE_URL %>">
+  <meta property="og:image" content="<%= BASE_URL %>logo.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="300">
+  <meta property="og:image:height" content="300">
+  <meta property="og:image:alt" content="Nebula Block logo">
+  <meta property="og:description" content="Nebula Block, a global leader in Web3 infrastructure, offers a range of comprehensive Web3 hosting solutions, including Blockchain enterprise infrastructure, high-performance GPUs, bare metal services, and decentralized hosting, aimed at enhancing the Web3 ecosystem.">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+  <title>
+    <%= webpackConfig.name %>
+  </title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-19TVXETREZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-19TVXETREZ');
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but
+      <%= webpackConfig.name %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+</body>
+
+</html>
