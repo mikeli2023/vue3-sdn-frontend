@@ -487,7 +487,7 @@ export default defineComponent({
         async function beforeClose (type) {
             const name = await route.name
             context.emit('handleLogin', false)
-            router.push({ name: type ? 'welcome':name })
+            router.push({ name: type ? '':name })
         }
 
         function onSignInSuccess (googleUser) {

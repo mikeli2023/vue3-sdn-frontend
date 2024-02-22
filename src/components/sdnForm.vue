@@ -138,7 +138,6 @@
             label: 'US'
           },
         ],
-        // region_options: [],
         DC_options: [
           {
             value: 'MTL3',
