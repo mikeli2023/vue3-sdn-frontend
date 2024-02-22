@@ -5,31 +5,17 @@
         <div class="text">
           <h1 class="font-79 font-gilroy-black">{{$t('main.banner.title')}}</h1>
           <p class="font-23">{{$t('main.banner.describe')}}</p>
-          <div class="learn-more font-20" @click="system.$commonFun.contactUsMethod()">{{$t('public.Contact-Us')}}</div>
+          <el-row :gutter="1">
+            <el-col :span="10">
+              <router-link :to="{name: 'SDN'}" class="learn-more font-20">{{$t('tools.sdn.title')}}</router-link>
+            </el-col>
+            <el-col :span="10">
+              <router-link :to="{name: 'VPN'}" class="learn-more font-20">{{$t('menu.VPN')}}</router-link>
+            </el-col>
+          </el-row>
         </div>
       </div>
     </div>
-
-    <!-- <div class="starting">
-      <div class="starting-cont">
-        <el-row class="row-bg" :gutter="48" justify="space-between">
-          <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" v-for="value in valueData" :key="value">
-            <div class="content" @click="productRoute(value.category_id)">
-              <div class="image flex-row center">
-                <img v-if="value.category_id === 7" src="@/assets/images/dashboard/InfrastructureProvider-01.png" />
-                <img v-else-if="value.category_id === 8" src="@/assets/images/dashboard/InfrastructureProvider-02.png" />
-                <img v-else-if="value.category_id === 9" src="@/assets/images/dashboard/InfrastructureProvider-03.png" />
-                <img v-else src="@/assets/images/dashboard/InfrastructureProvider-04.png" />
-              </div>
-              <p class="tit font-23 font-gilroy-bold flex-row center">{{value.name}}</p>
-              <p class="desc font-18">{{value.description}}</p>
-              <p class="price font-24" v-if="value.category_id === 9" @click.stop="system.$commonFun.contactUsMethod()">{{$t('public.Contact-Us')}}</p>
-              <p class="price font-24" v-else>Starting at {{value.price_rate || '-'}}</p>
-            </div>
-          </el-col>
-        </el-row>
-      </div>
-    </div> -->
 
     <div class="map">
       <div class="lang-max">

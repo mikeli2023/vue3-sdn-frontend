@@ -26,12 +26,12 @@
               <span class="mit font-22">{{$t('menu.Blog')}}</span>
             </el-menu-item>
           </el-sub-menu>
-          <el-menu-item index="support">
+          <!-- <el-menu-item index="support">
             <span class="mit font-22">{{$t('menu.Support')}}</span>
           </el-menu-item>
           <el-menu-item index="contact">
             <span class="mit font-22">{{$t('public.Contact-Us')}}</span>
-          </el-menu-item>
+          </el-menu-item> -->
           <el-menu-item index="myProfile" v-if="emailAddress">
             <span class="mit font-22">My Profile</span>
           </el-menu-item>

@@ -50,7 +50,7 @@
                                     <span>Sign in with Google</span>
                                 </div> -->
                                 <GoogleLogin :callback="callback" />
-                                <!-- <GoogleSignInButton @success="handleLoginSuccess" @error="handleLoginError"></GoogleSignInButton> -->
+                                <GoogleSignInButton @success="handleLoginSuccess" @error="handleLoginError"></GoogleSignInButton>
                                 <p>or</p>
                                 <div v-show="activeName === 'LogIn'">
                                     <el-form ref="ruleLogInRef" :model="ruleForm" :rules="rules" class="demo-ruleForm font-20" status-icon @submit.native.prevent>
@@ -236,7 +236,7 @@
     </section>
 </template>
 <script>
-// import { googleAuthCodeLogin } from "vue3-google-login"
+import { googleAuthCodeLogin } from "vue3-google-login"
 import loadingOver from "@/components/loading"
 import { defineComponent, computed, onMounted, onActivated, watch, ref, reactive, getCurrentInstance } from 'vue'
 import { useStore } from "vuex"
@@ -459,9 +459,9 @@ export default defineComponent({
             })
         }
         async function googleMethod () {
-            // googleAuthCodeLogin().then((response) => {
-            //     console.log("Handle the response", response)
-            // })
+            googleAuthCodeLogin().then((response) => {
+                console.log("Handle the response", response)
+            })
         }
         async function googleResult (token) {
             createLoad.value = true

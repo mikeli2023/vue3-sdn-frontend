@@ -1,8 +1,8 @@
 export default {
   "menu": {
     "Tools": "Tools",
-    "SDN": "SDN",
-    "VPN": "VPN",
+    "SDN": "Nebulablock SDN",
+    "VPN": "Nebulablock VPN",
     "Blockchain-Hosting": "Blockchain Hosting",
     "GPU-Clusters": "GPU Clusters",
     "About-Us": "About Us",
@@ -14,8 +14,8 @@ export default {
   },
   "main": {
     "banner": {
-      "title": "Web3 Infrastructure Provider",
-      "describe": "Leading the Web3 Revolution: Providing Comprehensive Hosting Solutions to Fortify and Enhance the Web3 Ecosystem"
+      "title": "Nebulablock Internal Tools",
+      "describe": "SDN(Software-Defined Networking). VPN (Virtual Private Network). "
     },
     "OurValues": {
       "title": "Our Values",
@@ -49,6 +49,30 @@ export default {
     "contactus": {
       "title": "LET’S WORK TOGETHER ON YOUR WEB3 PROJECT"
     }
+  },
+  "tools":{
+    "sdn":{
+      "title": "Nebulablock SDN",
+      "describe": "A Modern, Reliable Network With centralized control and programmability of network devices to optimize network management and performance",
+      "detail":{
+        "start": "Start",
+        "start-btn": "Start"
+      },
+      "advantages": {
+        "advantage-1":{
+          "title":"Centralized Management",
+          "detail":"SDN allows network administrators to manage the entire network from a central location, simplifying configuration, monitoring, and troubleshooting."
+      },
+        "advantage-2":{
+          "title":"Programmability and Automation",
+          "detail":"SDN enables programmable network behavior and automation, reducing manual tasks and enhancing network agility and adaptability."
+      },
+        "advantage-3":{
+          "title":"Scalability and Flexibility",
+          "detail":"By decoupling network hardware from network logic, SDN promotes scalability and flexibility, allowing organizations to easily scale their networks and adapt to changing business needs."
+      },
+      }
+    },
   },
   "product": {
     "colocation": {
@@ -108,98 +132,10 @@ export default {
         "title": "FEATURES"
       }
     },
-    "bareMetal": {
-      "title": "BARE METAL",
-      "describe": "Stay in full control of your environment with high performance  single-tenant dedicated servers, powered by NVIDIA GPUs and high-performance CPUs from AMD and Intel.",
-      "inter": {
-        "title": "COMPUTE",
-        "list-1": {
-          "title-1": "2 x Intel E5-2640 v3",
-          "describe-1": "2 x Intel E5-2640 v3",
-          "describe-2": "8 cores / 16 threads {'@'} 2.6GHz",
-          "describe-3": "128GB DDR4",
-          "describe-4": "2 x 480GB SSD",
-          "describe-5": "1G Bandwith",
-          "describe-6": "unlimited traffic",
-        },
-        "list-2": {
-          "title-1": "Intel Xeon Silver 4210",
-          "describe-1": "Intel Xeon Silver 4210",
-          "describe-2": "10 cores / 20 threads {'@'} 2.2GHz",
-          "describe-3": "128GB DDR4",
-          "describe-4": "2 x 480GB SSD",
-          "describe-5": "1G Bandwith",
-          "describe-6": "unlimited traffic",
-        },
-        "list-3": {
-          "title-1": "Intel Xeon 3204 *2",
-          "describe-1": "Intel Xeon 3204 *2",
-          "describe-2": "6 cores / 12 threads {'@'} 1.9GHz",
-          "describe-3": "64GB DDR4",
-          "describe-4": "2 * 480GB SATA SSD",
-          "describe-5": "36 * 16TB Enterprise HDD",
-          "describe-6": "10G Bandwith",
-          "describe-7": "unlimited traffic",
-        },
-        "list-4": {
-          "title-1": "Intel Xeon Silver 4210 * 2",
-          "describe-1": "Intel Xeon 3204 *2",
-          "describe-2": "10 cores / 20 threads {'@'} 2.2GHz",
-          "describe-3": "128GB DDR4",
-          "describe-4": "2 * 480GB SATA SSD",
-          "describe-5": "60 * 16TB Enterprise HDD",
-          "describe-6": "10G Bandwithh",
-          "describe-7": "unlimited traffic",
-        }
-      },
-      "amd": {
-        "title": "AMD COMPUTE",
-        "list-1": {
-          "title-1": "AMD EPYC 7302",
-          "describe-1": "AMD EPYC 7302",
-          "describe-2": "16 cores / 32 threads {'@'} 3GHz",
-          "describe-3": "256GB DDR4",
-          "describe-4": "2 x 2TB SATA SSD",
-          "describe-5": "1 x 3.48TB NVME",
-          "describe-6": "1G Bandwith",
-          "describe-7": "unlimited traffic",
-        },
-        "list-2": {
-          "title-1": "AMD EPYC 7452",
-          "describe-1": "AMD EPYC 7452",
-          "describe-2": "32 cores / 64 threads {'@'} 2.35GHz",
-          "describe-3": "256GB DDR4",
-          "describe-4": "2 * 2T SATA SSD",
-          "describe-5": "1*7.68TB",
-          "describe-6": "1G Bandwith",
-          "describe-7": "unlimited traffic",
-        },
-        "list-3": {
-          "title-1": "AMD EPYC 7542",
-          "describe-1": "AMD EPYC 7542",
-          "describe-2": "32 cores / 64 threads {'@'} 2.9GHz",
-          "describe-3": "512GB DDR4",
-          "describe-4": "2 * 2T SATA SSD",
-          "describe-5": "2*7.68TB",
-          "describe-6": "1G Bandwith",
-          "describe-7": "unlimited traffic",
-        },
-        "list-4": {
-          "title-1": "AMD EPYC 7642 * 2",
-          "describe-1": "AMD EPYC 7642 * 2",
-          "describe-2": "48 cores / 96 threads {'@'} 2.3GHz",
-          "describe-3": "1TB DDR4",
-          "describe-4": "2 * 2T SATA SSD",
-          "describe-5": "4*7.68TB",
-          "describe-6": "10G Bandwith",
-          "describe-7": "unlimited traffic",
-        },
-      },
-      "Month-Plan": "Month Plan",
-      "Hour-Plan": "Hour Plan"
-    },
+
     "ebi": {
       "title": "Nebulablock SDN",
+      "start": "Start",
       "describe": "One stop shop Blockchain Infrastructure provider <br />A Comprehensive Blockchain Infrastructure Hub Empowering the Web3 Ecosystem",
       "blockchain": {
         "title": "Trusted by technical teams at blockchain projects of all sizes",

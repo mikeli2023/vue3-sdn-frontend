@@ -3,276 +3,93 @@
       <div class="banner">
         <div class="content lang-max flex-row">
           <div class="text">
-            <h1 class="font-50 font-gilroy-bold">{{$t('product.ebi.title')}}</h1>
-            <p class="font-24" v-html="$t('product.ebi.describe')"></p>
-            <div class="learn-more font-30" @click="system.$commonFun.contactUsMethod()">{{$t('public.Contact-Us')}}</div>
+            <h1 class="font-48 font-gilroy-bold">{{$t('tools.sdn.title')}}</h1>
+            <p class="font-24" v-html="$t('tools.sdn.describe')"></p>
+            <div class="learn-more font-30" @click="getStarted">{{$t('tools.sdn.detail.start-btn')}}</div>
           </div>
         </div>
       </div>
   
-      <div class="blockchain">
-        <div class="subtit font-30 font-gilroy-bold">{{$t('product.ebi.blockchain.title')}}</div>
-        <div class="block-cont flex-row center">
-          <img v-for="b in blockData" :key="b" :src="b.img" />
-        </div>
-      </div>
-  
-      <div class="realm">
-        <div class="subtit font-30 font-gilroy-bold">{{$t('product.ebi.realm.title')}}</div>
-        <div class="realm-cont lang-max">
-          <el-row class="row-bg" :gutter="20" justify="space-between">
-            <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6" v-for="r in realmData" :key="r">
+      <div class="model">
+        <div class="model-cont lang-max flex-row center">
+          <el-row class="row-bg" :gutter="84" justify="space-between">
+            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="8" v-for="(m, mIndex) in modelData" :key="mIndex">
               <div class="content">
-                <div class="image">
-                  <img :src="r.img" />
+                <div class="image flex-row center">
+                  <svg v-if="mIndex === 0" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <path fill-rule="evenodd" d="M31.467.033a.5.5 0 0 1 .5.5v30.934a.5.5 0 0 1-.5.5H.533a.5.5 0 0 1-.5-.5V.533a.5.5 0 0 1 .5-.5h30.934zm-.5 1H1.033v29.934h29.934V1.033zM9.067 4.3h.022l.043.004-.065-.004a.502.502 0 0 1 .353.146l4.267 4.267a.5.5 0 1 1-.707.707L9.566 6.006V17.1h4.627L24.925 6.366h-6.258a.5.5 0 1 1 0-1h7.466l.023.001c.014 0 .029.002.043.004l-.066-.004a.502.502 0 0 1 .354.146l.014.015.031.037-.045-.052a.502.502 0 0 1 .146.354v7.466a.5.5 0 1 1-1 0v-6.26L14.9 17.806v4.625h11.093L22.58 19.02a.5.5 0 0 1 .707-.707l4.267 4.267.013.013a.503.503 0 0 1 .031.038l-.044-.051a.502.502 0 0 1 .146.353v.023a.503.503 0 0 1-.004.043l.004-.066a.502.502 0 0 1-.146.354l-4.267 4.267a.5.5 0 0 1-.707-.708l3.412-3.414H14.9l.001 2.701a.5.5 0 0 1-.5.5H5.867a.5.5 0 0 1-.5-.5V17.6a.5.5 0 0 1 .5-.5h2.7V6.005L5.153 9.42a.5.5 0 0 1-.708-.707l4.267-4.267.015-.014a.503.503 0 0 1 .04-.033l-.055.047a.502.502 0 0 1 .354-.146zM13.9 18.1H6.367v7.533H13.9V18.1z"></path>
+                  </svg>
+                  <svg v-else-if="mIndex === 1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <path fill-rule="evenodd" d="M25.026 8.809a16 16 0 0 1 6.571 16.803.5.5 0 0 1-.487.388H.9a.5.5 0 0 1-.487-.388A16 16 0 0 1 25.026 8.81zm-17.478.826A15 15 0 0 0 1.303 25h29.404A15 15 0 0 0 7.547 9.635zM19.5 18.45c.39.39-2.44 3.86-2.83 4.24a1 1 0 0 1-1.41-1.41c.39-.39 3.85-3.22 4.24-2.83zm8 2.55a.5.5 0 1 1 0 1h-2.48a.5.5 0 1 1 0-1h2.48zM7 21a.5.5 0 1 1 0 1H4.5a.5.5 0 1 1 0-1H7zm-.006-6.664l2.02 1.47a.5.5 0 0 1-.588.808l-2.02-1.47a.5.5 0 0 1 .588-.808zm18.71.11a.5.5 0 0 1-.11.698l-2.02 1.47a.5.5 0 0 1-.588-.808l2.02-1.47a.5.5 0 0 1 .698.11zm-6-4.362a.5.5 0 0 1 .322.63l-.77 2.38a.5.5 0 0 1-.952-.308l.77-2.38a.5.5 0 0 1 .63-.322zm-6.778.322l.77 2.37a.5.5 0 0 1-.952.308l-.77-2.37a.5.5 0 0 1 .952-.308z"></path>
+                  </svg>
+                  <svg v-else xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 32 32" version="1.1">
+                    <title>Icons/concept/Puzzle</title>
+                    <desc>Created with Sketch.</desc>
+                    <g id="Icons/concept/Puzzle" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <path d="M4.26325641e-14,1.39891441 C4.26325641e-14,0.626541422 0.626501788,7.63833441e-14 1.39983806,7.63833441e-14 L17.6032389,3.01980663e-14 C17.8804992,3.01980663e-14 18.1052632,0.224324969 18.1052632,0.501043841 C18.1052632,0.777762714 17.8804992,1.00208768 17.6032389,1.00208768 L17.036,1.002 L17.0364372,6.91440501 C17.0364372,7.19112388 16.8116733,7.41544885 16.534413,7.41544885 L14.9311741,7.41544885 C14.7729872,7.41544885 14.6240527,7.34103705 14.5292631,7.21464299 C13.9687915,6.46730016 12.9933926,6.16258923 12.1075838,6.45787754 C11.2214427,6.75327658 10.6234818,7.58295552 10.6234818,8.5177453 C10.6234818,9.45253508 11.2214427,10.282214 12.1075838,10.5776131 C12.9933926,10.8729014 13.9687915,10.5681904 14.5292631,9.82084762 C14.6240527,9.69445356 14.7729872,9.62004175 14.9311741,9.62004175 L16.534413,9.62004175 C16.8116733,9.62004175 17.0364372,9.84436672 17.0364372,10.1210856 L17.036,16.033 L22.4453441,16.0334029 L22.4453441,15.1682362 C21.4999914,14.3313081 21.1349494,13.0032751 21.539306,11.7901285 C21.9712136,10.4943238 23.1841384,9.62004175 24.5506073,9.62004175 C25.9170762,9.62004175 27.1300009,10.4943238 27.5619085,11.7901285 C27.9662651,13.0032751 27.6012232,14.3313081 26.6558704,15.1682362 L26.6558704,16.0334029 L30.995,16.033 L30.9959514,15.4655532 C30.9959514,15.1888344 31.2207153,14.9645094 31.4979757,14.9645094 C31.7752361,14.9645094 32,15.1888344 32,15.4655532 L32,30.6010856 C32,31.3734586 31.3734982,32 30.6001619,32 L16.5446575,31.9998978 C16.5412509,31.9999658 16.5378359,32 16.534413,32 L1.39983806,32 C0.626501788,32 4.26325641e-14,31.3734586 4.26325641e-14,30.6010856 L4.26325641e-14,1.39891441 Z M1.00404858,30.6010856 C1.00404858,30.8204731 1.18147662,30.9979123 1.39983806,30.9979123 L16.032,30.997 L16.0323887,26.1544885 C16.0323887,25.8777696 16.2571526,25.6534447 16.534413,25.6534447 L18.1376518,25.6534447 C18.2958387,25.6534447 18.4447732,25.7278565 18.5395628,25.8542505 C19.1000344,26.6015934 20.0754333,26.9063043 20.9612421,26.611016 C21.8473832,26.3156169 22.4453441,25.485938 22.4453441,24.5511482 C22.4453441,23.6163584 21.8473832,22.7866795 20.9612421,22.4912805 C20.0754333,22.1959922 19.1000344,22.5007031 18.5395628,23.2480459 C18.4447732,23.37444 18.2958387,23.4488518 18.1376518,23.4488518 L16.534413,23.4488518 C16.2571526,23.4488518 16.0323887,23.2245268 16.0323887,22.9478079 L16.032,17.035 L10.6234818,17.0354906 L10.6234818,17.9006573 C11.5688345,18.7375854 11.9338765,20.0656184 11.5295199,21.278765 C11.0976123,22.5745697 9.8846875,23.4488518 8.51821862,23.4488518 C7.15174975,23.4488518 5.93882496,22.5745697 5.50691738,21.278765 C5.10256077,20.0656184 5.46760271,18.7375854 6.41295547,17.9006573 L6.41295547,17.0354906 L1.004,17.035 L1.00404858,30.6010856 Z M24.5506073,10.6221294 C23.6168003,10.6221294 22.7875256,11.2198746 22.4920221,12.1064413 C22.1964083,12.9933388 22.5014361,13.9698755 23.248972,14.5305629 C23.3751559,14.6252068 23.4493927,14.7735701 23.4493927,14.9311065 L23.4493927,16.5344468 C23.4493927,16.8111656 23.2246288,17.0354906 22.9473684,17.0354906 L17.0364372,17.0354906 L17.0364372,22.4467641 L17.8994777,22.4467641 C18.7366416,21.5013598 20.0654299,21.1361507 21.2793273,21.5408088 C22.5754195,21.9728669 23.4493927,23.1855166 23.4493927,24.5511482 C23.4493927,25.9167798 22.5754195,27.1294296 21.2793273,27.5614876 C20.0654299,27.9661457 18.7366416,27.6009367 17.8994777,26.6555324 L17.0364372,26.6555324 L17.0364372,30.9979123 L30.6001619,30.9979123 C30.8185234,30.9979123 30.9959514,30.8204731 30.9959514,30.6010856 L30.9959514,17.0354906 L26.1538462,17.0354906 C25.8765858,17.0354906 25.6518219,16.8111656 25.6518219,16.5344468 L25.6518219,14.9311065 C25.6518219,14.7735701 25.7260587,14.6252068 25.8522426,14.5305629 C26.5997785,13.9698755 26.9048063,12.9933388 26.6091925,12.1064413 C26.313689,11.2198746 25.4844143,10.6221294 24.5506073,10.6221294 Z M16.0323887,1.00208768 L1.39983806,1.00208768 C1.18147662,1.00208768 1.00404858,1.17952695 1.00404858,1.39891441 L1.00404858,16.0334029 L6.91497976,16.0334029 C7.19224012,16.0334029 7.41700405,16.2577279 7.41700405,16.5344468 L7.41700405,18.1377871 C7.41700405,18.2953234 7.34276723,18.4436867 7.21658336,18.5383306 C6.4690474,19.0990181 6.16401961,20.0755548 6.45963341,20.9624523 C6.75513693,21.8490189 7.58441163,22.4467641 8.51821862,22.4467641 C9.45202562,22.4467641 10.2813003,21.8490189 10.5768038,20.9624523 C10.8724176,20.0755548 10.5673898,19.0990181 9.81985389,18.5383306 C9.69367001,18.4436867 9.6194332,18.2953234 9.6194332,18.1377871 L9.6194332,16.5344468 C9.6194332,16.2577279 9.84419713,16.0334029 10.1214575,16.0334029 L16.0323887,16.0334029 L16.0323887,10.6221294 L15.1693482,10.6221294 C14.3321843,11.5675338 13.003396,11.9327428 11.7894986,11.5280847 C10.4934064,11.0960267 9.6194332,9.88337691 9.6194332,8.5177453 C9.6194332,7.1521137 10.4934064,5.93946395 11.7894986,5.50740588 C13.003396,5.10274783 14.3321843,5.46795683 15.1693482,6.41336117 L16.0323887,6.41336117 L16.0323887,1.00208768 Z M31.4872874,12.5563 C31.7645478,12.5563 31.9893117,12.780625 31.9893117,13.0573439 L31.9893117,13.9370355 C31.9893117,14.2137544 31.7645478,14.4380793 31.4872874,14.4380793 C31.2100271,14.4380793 30.9852632,14.2137544 30.9852632,13.9370355 L30.9852632,13.0573439 C30.9852632,12.780625 31.2100271,12.5563 31.4872874,12.5563 Z M31.4872874,8.74836688 C31.7645478,8.74836688 31.9893117,8.97269185 31.9893117,9.24941073 L31.9893117,11.1533773 C31.9893117,11.4300962 31.7645478,11.6544211 31.4872874,11.6544211 C31.2100271,11.6544211 30.9852632,11.4300962 30.9852632,11.1533773 L30.9852632,9.24941073 C30.9852632,8.97269185 31.2100271,8.74836688 31.4872874,8.74836688 Z M31.4872874,4.94043374 C31.7645478,4.94043374 31.9893117,5.16475871 31.9893117,5.44147758 L31.9893117,7.34544415 C31.9893117,7.62216302 31.7645478,7.84648799 31.4872874,7.84648799 C31.2100271,7.84648799 30.9852632,7.62216302 30.9852632,7.34544415 L30.9852632,5.44147758 C30.9852632,5.16475871 31.2100271,4.94043374 31.4872874,4.94043374 Z M31.4872874,1.13250059 C31.7645478,1.13250059 31.9893117,1.35682556 31.9893117,1.63354443 L31.9893117,3.53751101 C31.9893117,3.81422988 31.7645478,4.03855485 31.4872874,4.03855485 C31.2100271,4.03855485 30.9852632,3.81422988 30.9852632,3.53751101 L30.9852632,1.63354443 C30.9852632,1.35682556 31.2100271,1.13250059 31.4872874,1.13250059 Z M22.557085,9.50350909e-14 C22.8343454,9.50350909e-14 23.0591093,0.224324969 23.0591093,0.501043841 C23.0591093,0.777762714 22.8343454,1.00208768 22.557085,1.00208768 L20.6493927,1.00208768 C20.3721324,1.00208768 20.1473684,0.777762714 20.1473684,0.501043841 C20.1473684,0.224324969 20.3721324,9.50350909e-14 20.6493927,9.50350909e-14 L22.557085,9.50350909e-14 Z M26.3724696,9.50350909e-14 C26.6497299,9.50350909e-14 26.8744939,0.224324969 26.8744939,0.501043841 C26.8744939,0.777762714 26.6497299,1.00208768 26.3724696,1.00208768 L24.4647773,1.00208768 C24.1875169,1.00208768 23.962753,0.777762714 23.962753,0.501043841 C23.962753,0.224324969 24.1875169,9.50350909e-14 24.4647773,9.50350909e-14 L26.3724696,9.50350909e-14 Z M30.1878541,9.50350909e-14 C30.4651145,9.50350909e-14 30.6898784,0.224324969 30.6898784,0.501043841 C30.6898784,0.777762714 30.4651145,1.00208768 30.1878541,1.00208768 L28.2801618,1.00208768 C28.0029015,1.00208768 27.7781376,0.777762714 27.7781376,0.501043841 C27.7781376,0.224324969 28.0029015,9.50350909e-14 28.2801618,9.50350909e-14 L30.1878541,9.50350909e-14 Z"
+                        id="Color"></path>
+                    </g>
+                  </svg>
                 </div>
-                <p class="tit font-22" v-html="r.title"></p>
+                <p class="tit font-30 font-gilroy-bold">{{m.title}}</p>
+                <p class="desc font-18 flex-row center">{{m.desc}}</p>
               </div>
             </el-col>
           </el-row>
         </div>
-      </div>
-  
-      <div class="builders">
-        <div class="lang-max">
-          <div class="builders-cont flex-row space-between">
-            <div class="font-46 font-gilroy-black" v-html="$t('product.ebi.builders.title')"></div>
-            <div class="learn-more font-33 font-gilroy-bold" @click="system.$commonFun.contactUsMethod()">{{$t('public.Contact-Us')}}</div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="network">
-        <div class="network-cont flex-row center">
-          <el-row class="row-bg" :gutter="44" justify="space-between">
-            <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12" v-for="n in networkData" :key="n">
-              <div class="module" :class="{'hide': n.collapse}">
-                <h1 class="font-20 weight-6 flex-row space-between padding nowrap">
-                  <div class="flex-row nowrap">
-                    <img :src="n.img" />{{n.title}}
-                  </div>
-                  <!-- <div class="button width-icon" @click="n.collapse=!n.collapse">
-                    <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ExpandMoreIcon">
-                      <path d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
-                    </svg>
-                  </div> -->
-                </h1>
-                <div class="area flex-row flex-start">
-                  <ul>
-                    <li class="desc font-18 flex-row nowrap" v-for="g in n.list" :key="g">
-                      <div class="width-icon min-small">
-                        <Right />
-                      </div>
-                      <span v-html="g"></span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </el-col>
-          </el-row>
-        </div>
-        <div class="learn-more font-30 font-gilroy-bold" @click="system.$commonFun.contactUsMethod()">{{$t('public.Contact-Us')}}</div>
       </div>
     </section>
   </template>
   
   <script>
-  import { defineComponent, computed, onMounted, watch, ref, reactive, getCurrentInstance } from 'vue'
+  import loadingOver from "@/components/loading"
+  import { defineComponent, computed, onMounted, onActivated, watch, ref, reactive, getCurrentInstance } from 'vue'
   import { useStore } from "vuex"
   import { useRouter, useRoute } from 'vue-router'
   import { useI18n } from "vue-i18n"
   import {
-    Right
+    CircleCheckFilled, ArrowDownBold
   } from '@element-plus/icons-vue'
-  import { ElRow, ElCol, ElButton } from 'element-plus'
+  import { ElRow, ElCol, ElButton, ElSwitch, ElCarousel, ElCarouselItem } from 'element-plus'
   export default defineComponent({
     components: {
-      Right,
-      ElRow, ElCol, ElButton
+      loadingOver, CircleCheckFilled, ArrowDownBold,
+      ElRow, ElCol, ElButton, ElSwitch, ElCarousel, ElCarouselItem
     },
     setup () {
       const store = useStore()
       const { t, locale } = useI18n()
-      const carouselHeight = ref(document.body.clientWidth >= 1600 ? '600px' : document.body.clientWidth <= 768 ? '350px' : '450px')
+      const emailAddress = computed(() => (store.state.emailAddress))
+      const language = computed(() => (store.state.languageNB))
       const bodyWidth = ref(document.body.clientWidth <= 768 ? 30 : 50)
       const system = getCurrentInstance().appContext.config.globalProperties
       const route = useRoute()
       const router = useRouter()
-      const interData = ref([
+      const modelData = ref([
         {
-          title: t('product.bareMetal.inter.list-1.title-1'),
-          minthPrice: 139.9,
-          list: [
-            t('product.bareMetal.inter.list-1.describe-1'),
-            t('product.bareMetal.inter.list-1.describe-2'),
-            t('product.bareMetal.inter.list-1.describe-3'),
-            t('product.bareMetal.inter.list-1.describe-4'),
-            t('product.bareMetal.inter.list-1.describe-5'),
-            t('product.bareMetal.inter.list-1.describe-6'),
-          ]
+          title: t('tools.sdn.advantages.advantage-1.title'),
+          desc: t('tools.sdn.advantages.advantage-1.detail')
         },
         {
-          title: t('product.bareMetal.inter.list-2.title-1'),
-          minthPrice: 149.9,
-          list: [
-            t('product.bareMetal.inter.list-2.describe-1'),
-            t('product.bareMetal.inter.list-2.describe-2'),
-            t('product.bareMetal.inter.list-2.describe-3'),
-            t('product.bareMetal.inter.list-2.describe-4'),
-            t('product.bareMetal.inter.list-2.describe-5'),
-            t('product.bareMetal.inter.list-2.describe-6'),
-          ]
-        }
-      ])
-      const blockData = ref([
-        {
-          img: require(`@/assets/images/ebi/logo-01.png`)
+          title: t('tools.sdn.advantages.advantage-2.title'),
+          desc: t('tools.sdn.advantages.advantage-2.detail')
         },
         {
-          img: require(`@/assets/images/ebi/logo-06.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-04.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-12.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-13.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-14.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-15.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-16.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-02.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-03.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-05.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-07.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-08.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-09.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-10.png`)
-        },
-        {
-          img: require(`@/assets/images/ebi/logo-11.png`)
-        }
-      ])
-      const blockListData = ref([
-        {
-          title: t('product.ebi.blockchain.title-1')
-        },
-        {
-          title: t('product.ebi.blockchain.title-2')
-        },
-        {
-          title: t('product.ebi.blockchain.title-3')
-        },
-        {
-          title: t('product.ebi.blockchain.title-4')
-        },
-        {
-          title: t('product.ebi.blockchain.title-5')
-        },
-        {
-          title: t('product.ebi.blockchain.title-6')
-        }
-      ])
-      const realmData = ref([
-        {
-          img: require("@/assets/images/ebi/icon-01.png"),
-          title: t('product.ebi.realm.title-1')
-        },
-        {
-          img: require("@/assets/images/ebi/icon-02.png"),
-          title: t('product.ebi.realm.title-2')
-        },
-        {
-          img: require("@/assets/images/ebi/icon-03.png"),
-          title: t('product.ebi.realm.title-3')
-        },
-        {
-          img: require("@/assets/images/ebi/icon-04.png"),
-          title: t('product.ebi.realm.title-4')
-        },
-      ])
-      const networkData = ref([
-        {
-          collapse: false,
-          img: require("@/assets/images/ebi/card-logo-01.png"),
-          title: t('product.ebi.network.list-1.title'),
-          list: [
-            t('product.ebi.network.list-1.describe-1'),
-            t('product.ebi.network.list-1.describe-2'),
-            t('product.ebi.network.list-1.describe-3'),
-            t('product.ebi.network.list-1.describe-4'),
-            t('product.ebi.network.list-1.describe-5'),
-            t('product.ebi.network.list-1.describe-6'),
-          ]
-        },
-        {
-          collapse: false,
-          img: require("@/assets/images/ebi/card-logo-02.png"),
-          title: t('product.ebi.network.list-2.title'),
-          list: [
-            t('product.ebi.network.list-2.describe-1'),
-            t('product.ebi.network.list-2.describe-2')
-          ]
-        },
-        {
-          collapse: false,
-          img: require("@/assets/images/ebi/card-logo-03.png"),
-          title: t('product.ebi.network.list-3.title'),
-          list: [
-            t('product.ebi.network.list-3.describe-1'),
-            t('product.ebi.network.list-3.describe-2'),
-            t('product.ebi.network.list-3.describe-3'),
-            t('product.ebi.network.list-3.describe-4')
-          ]
-        },
-        {
-          collapse: false,
-          img: require("@/assets/images/ebi/card-logo-04.png"),
-          title: t('product.ebi.network.list-4.title'),
-          list: [
-            t('product.ebi.network.list-4.describe-1'),
-            t('product.ebi.network.list-4.describe-2')
-          ]
-        },
-        {
-          collapse: false,
-          img: require("@/assets/images/ebi/card-logo-06.png"),
-          title: t('product.ebi.network.list-6.title'),
-          list: [
-            t('product.ebi.network.list-6.describe-1'),
-            t('product.ebi.network.list-6.describe-2')
-          ]
+          title: t('tools.sdn.advantages.advantage-3.title'),
+          desc: t('tools.sdn.advantages.advantage-3.detail')
         }
       ])
   
+      function getStarted () {
+        if (emailAddress.value) router.push({ name: 'SDNForm' })
+        else router.push({ name: route.name, query: { state: 'LogIn' } })
+      }
       onMounted(() => { })
       return {
         system,
-        blockData,
-        blockListData,
-        realmData,
-        networkData
+        bodyWidth,
+        modelData,
+        getStarted
       }
     }
   })
@@ -281,6 +98,9 @@
   <style lang="less" scoped>
   #container-main {
     padding: 0 0 100px;
+    // background: url(../../assets/images/background-image06.png) right 22%
+    //   no-repeat;
+    // background-size: 8%;
     font-size: 18px;
     letter-spacing: 1px;
     word-break: break-word;
@@ -289,7 +109,7 @@
     .title {
       display: inline-block;
       padding: 20px 50px;
-      margin: 0 auto 60px;
+      margin: 45px auto 60px;
       color: @theme-color;
       border-radius: 100px;
       @media screen and (max-width: 768px) {
@@ -330,29 +150,28 @@
       position: relative;
       padding: 125px 0 0;
       background: url(../../assets/images/background-image02.png),
-        url(../../assets/images/background-image05.png),
-        url(../../assets/images/bg-ebi.png);
-      background-position: 3% 35%, 40% 0%, 80% bottom;
-      background-size: 12%, 17%, auto 75%;
-      background-repeat: no-repeat, no-repeat, no-repeat;
+        url(../../assets/images/bg-cloud.webp);
+      background-position: 3% 25%, 85% bottom;
+      background-size: 12%, 35%;
+      background-repeat: no-repeat, no-repeat;
       @media screen and (min-width: 2160px) {
-        padding: 80px 0 0;
+        padding: 90px 0 0;
       }
       @media screen and (max-width: 1440px) {
-        padding: 105px 0 0;
+        padding: 115px 0 0;
       }
       @media screen and (max-width: 768px) {
         padding: 220px 0 100px;
       }
       .content {
         .text {
-          max-width: 660px;
-          padding: 80px 0;
+          max-width: 760px;
+          padding: 70px 0;
           margin: 0;
           color: @black-color;
           line-height: 1.13;
           @media screen and (max-width: 1260px) {
-            max-width: 980px;
+            max-width: 1080px;
           }
           @media screen and (max-width: 600px) {
             max-width: none;
@@ -371,213 +190,59 @@
         }
       }
     }
-    :deep(.blockchain) {
-      padding: 0 40px;
-      margin: 0 auto 80px;
-      .block-cont {
-        width: 90%;
-        // max-width: 900px;
-        margin: 120px auto 70px;
-        // @media screen and (max-width: 768px) {
-        //   max-width: 1350px;
-        // }
-        img {
-          height: 100px;
-          margin: 0;
-          @media screen and (max-width: 768px) {
-            height: 150px;
-          }
-          @media screen and (max-width: 767px) {
-            height: 200px;
-          }
-        }
-      }
-      .row-bg {
-        .el-col {
-          margin: 10px 0;
-          @media screen and (max-width: 767px) {
-            margin: 20px 0;
-          }
-          .content {
-            height: calc(100% - 40px);
-            padding: 20px 0;
-            background-color: @theme-color;
-            color: @white-color;
-            border-radius: 10px;
-            text-align: center;
-            @media screen and (max-width: 768px) {
-              height: calc(100% - 80px);
-              padding: 40px 0;
-              border-radius: 20px;
-            }
-          }
-        }
-      }
-    }
-    :deep(.realm),
-    :deep(.blockchain) {
+    :deep(.model) {
       text-align: center;
-      overflow: hidden;
+      padding: 70px 0 120px;
       .subtit {
-        max-width: 1024px;
-        margin: 70px auto 20px;
+        max-width: 950px;
+        margin: 0 auto 60px;
         color: @theme-color;
-        line-height: 1.4;
         @media screen and (max-width: 768px) {
-          max-width: 95%;
+          max-width: 1430px;
         }
       }
-      .realm-cont {
-        margin: 70px auto 100px;
+      .model-cont {
+        text-align: left;
         .el-row {
-          text-align: left;
           .el-col {
-            margin: 50px auto 0;
-            &:nth-child(2n + 1) {
-              .content {
-                background-color: #739dd2;
-              }
-            }
+            margin: 50px 0 0;
             .content {
-              height: calc(100% - 70px);
-              padding: 35px 28px;
-              background-color: @theme-color;
-              border-radius: 30px;
-              color: @white-color;
-              @media screen and (max-width: 767px) {
-                height: calc(100% - 140px);
-                padding: 70px 56px;
-                border-radius: 60px;
-              }
               .image {
+                width: 90px;
                 height: 90px;
-                img {
-                  height: 100%;
+                background-color: #93a3ce;
+                border-radius: 200px;
+                @media screen and (max-width: 768px) {
+                  width: 135px;
+                  height: 135px;
+                }
+                @media screen and (max-width: 600px) {
+                  width: 180px;
+                  height: 180px;
+                }
+                img,
+                svg,
+                g {
+                  height: 70%;
+                  fill: @white-color;
+                  color: @white-color;
+                  @media screen and (max-width: 600px) {
+                    height: 50%;
+                  }
                 }
               }
               .tit {
-                margin: 50px 0 0;
-                line-height: 1.5;
-              }
-            }
-          }
-        }
-      }
-    }
-    :deep(.builders) {
-      margin: 120px auto;
-      background-color: @theme-color;
-      color: @white-color;
-      .builders-cont {
-        padding: 40px 120px;
-        @media screen and (max-width: 767px) {
-          padding: 135px 0 80px;
-        }
-        .learn-more {
-          margin: 55px 0;
-          padding: 22px 40px;
-          background-color: @white-color;
-          border-color: @white-color;
-          color: @theme-color;
-        }
-      }
-    }
-    :deep(.network) {
-      padding: 100px 0 120px;
-      text-align: center;
-      .network-cont {
-        width: 90%;
-        max-width: 900px;
-        margin: 0 auto 20px;
-        @media screen and (max-width: 768px) {
-          max-width: 1350px;
-        }
-        .row-bg {
-          .el-col {
-            margin: 0 0 45px;
-            .module {
-              height: 100%;
-              margin: 0 auto;
-              background-color: @white-color;
-              color: @black-color;
-              border-radius: 20px;
-              box-shadow: 0 3px 5px rgba(77, 135, 253, 0.2);
-              @media screen and (max-width: 768px) {
-                box-shadow: 0 6px 10px rgba(77, 135, 253, 0.2);
-                border-radius: 40px;
-              }
-              &.hide {
-                height: auto;
-                .area {
-                  height: 0;
-                  border-top: 0;
-                }
-                h1 {
-                  .button {
-                    transform: rotate(-90deg);
-                  }
+                min-height: 87px;
+                margin: 30px 0 0;
+                line-height: 35px;
+                @media screen and (max-width: 768px) {
+                  margin: 60px 0 0;
+                  line-height: 1.15;
                 }
               }
-              h1 {
-                // text-shadow: 0px 0px 9px #e77304;
-                color: #7a7a7a;
-                &.padding {
-                  padding: 12px 30px;
-                  @media screen and (max-width: 767px) {
-                    padding: 24px 60px;
-                  }
-                }
-                .nowrap {
-                  width: 100%;
-                  word-break: break-word;
-                }
-                img {
-                  height: 55px;
-                  margin: 0 15px 0 0;
-                  @media screen and (max-width: 768px) {
-                    height: 80px;
-                    margin: 0 20px 0 0;
-                  }
-                  @media screen and (max-width: 600px) {
-                    height: 110px;
-                    margin: 0 30px 0 0;
-                  }
-                }
-              }
-              .area {
-                height: auto;
-                max-height: unset;
-                text-align: center;
-                transition: all 0.3s;
-                overflow: hidden;
-                border-top: 2px solid #a2abd2;
-                p.tit {
-                  width: 100%;
-                }
-                ul {
-                  padding: 30px 60px;
-                  @media screen and (max-width: 767px) {
-                    padding: 60px 120px;
-                  }
-                  li {
-                    align-items: flex-start;
-                    padding: 4px 0;
-                    text-align: left;
-                    line-height: 1.3;
-                    color: inherit;
-                    @media screen and (max-width: 767px) {
-                      padding: 8px 0;
-                    }
-                    .width-icon {
-                      margin: 0 10px 0 0;
-                      fill: #28479d;
-                      svg,
-                      path {
-                        fill: inherit;
-                      }
-                    }
-                  }
-                }
+              .desc {
+                color: @black-color;
+                line-height: 1.4;
               }
             }
           }

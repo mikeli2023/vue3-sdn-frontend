@@ -12,6 +12,10 @@ const main = () =>
     import ("@/views/main/index");
 const sdn = () =>
     import ("@/views/product/sdn");
+const sdnForm = () =>
+    import ("@/components/sdnForm");
+const vpn = () =>
+    import ("@/views/product/vpn");
 const myProfile = () =>
     import ("@/views/profile/index");
 const aboutUs = () =>
@@ -36,15 +40,23 @@ const routes = [{
             component: sdn,
             meta: {
                 keepAlive: true,
-                title: 'Blockchain Hosting'
+                title: 'Nebulablock SDN'
+            }
+        }, {
+            path: '/sdn-form',
+            name: 'SDNForm',
+            component: sdnForm,
+            meta: {
+                keepAlive: true,
+                title: 'SDN Form'
             }
         }, {
             path: '/vpn',
             name: 'VPN',
-            component: sdn,
+            component: vpn,
             meta: {
                 keepAlive: true,
-                title: 'Blockchain Hosting'
+                title: 'Nebulablock VPN'
             },
             beforeEnter: (to, from, next) => {
                 if (!sessionStorage.getItem('email_address_nebulaBlock')) {
