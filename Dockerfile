@@ -1,15 +1,4 @@
 FROM node:18.12.1-alpine as builder
-# python2 support
-
-RUN apk add --update \
-  python3 \
-  python3-dev \
-  py-pip \
-  build-base \
-  git \
-  openssh-client \
-&& pip install --ignore-installed distlib virtualenv \
-&& rm -rf /var/cache/apk/* \
 
 # make the 'app' folder the current working directory
 WORKDIR /app
@@ -42,5 +31,5 @@ FROM nginx:1.15.2-alpine as production-build
 
 COPY --from=builder dist_prod /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 8080
+EXPOSE 9080
 CMD ["nginx", "-g", "daemon off;"]
